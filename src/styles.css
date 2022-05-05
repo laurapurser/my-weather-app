@@ -1,0 +1,12 @@
+.container {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(166, 226, 229) 0%,
+    rgb(198, 232, 221) 100.2%
+  );
+  border: 3px solid black;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
