@@ -7,7 +7,7 @@ export default function SearchResults() {
   const [weatherData, setWeatherData] = useState("");
 
   function handleResponse(response) {
-    console.log(response);
+    setReady(true);
     setWeatherData({
       city: "New York",
       date: "May 6th 2022",
@@ -19,7 +19,6 @@ export default function SearchResults() {
       max: response.data.main.temp_max,
       wind: response.data.wind.speed,
     });
-    setReady(true);
   }
   if (ready) {
     return (
