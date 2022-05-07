@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SearchResults.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
 
 export default function SearchResults() {
   const [ready, setReady] = useState(false);
@@ -10,7 +11,7 @@ export default function SearchResults() {
     setReady(true);
     setWeatherData({
       city: "New York",
-      date: "May 6th 2022",
+      date: new Date(response.data.dt * 1000),
       feels: response.data.main.feels_like,
       temp: response.data.main.temp,
       current: response.data.weather[0].description,
@@ -32,7 +33,7 @@ export default function SearchResults() {
                 </li>
 
                 <li className="cardtexttwo" id="date-line">
-                  {weatherData.date}
+                  <FormattedDate date={weatherData.date} />
                 </li>
 
                 <li className="cardtextthree" id="temp-number">
@@ -59,10 +60,10 @@ export default function SearchResults() {
                   Humidity: {weatherData.humidity}%
                 </li>
                 <li className="cardtext" id="high">
-                  High: {weatherData.max}°C
+                  High: {Math.round(weatherData.max)}°C
                 </li>
                 <li className="cardtext" id="low">
-                  Low: {weatherData.min}°C
+                  Low: {Math.round(weatherData.min)}°C
                 </li>
 
                 <li className="cardtext" id="windspeed">
