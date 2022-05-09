@@ -28,6 +28,7 @@
   font-size: 20px;
   list-style-type: none;
   color: black;
+  text-align: left;
 }
 .cardtexttwo:hover {
   color: black;
@@ -36,6 +37,7 @@
 .cardtextthree {
   font-size: 40px;
   list-style-type: none;
+  text-align: left;
 }
 .card-one {
   padding-bottom: 15px;
