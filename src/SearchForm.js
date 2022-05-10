@@ -6,7 +6,6 @@ import "./SearchForm.css";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
-
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -16,6 +15,7 @@ export default function SearchForm(props) {
       date: new Date(response.data.dt * 1000),
       feels: response.data.main.feels_like,
       temp: response.data.main.temp,
+      // iconUrl:
       current: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       min: response.data.main.temp_min,
@@ -50,7 +50,7 @@ export default function SearchForm(props) {
               className="search-field"
               onChange={handleCityChange}
             />{" "}
-            <input type="submit" value="Search" className="submit-button" />
+            <input type="submit" value="Search" className="submit-button" />{" "}
             <button
               type="button"
               id="current-weather"
